@@ -1,0 +1,20 @@
+00:26:08.789
+                [main]
+                DEBUG
+                AppenderExample
+                - Debug Message
+00:26:08.790
+                [main]
+                INFO 
+                AppenderExample
+                - Information
+00:26:08.790
+                [main]
+                WARN 
+                AppenderExample
+                - Warning
+00:26:08.792
+                [main]
+                ERROR
+                AppenderExample
+                - Error
