@@ -28,7 +28,7 @@ Thumbs.db
 # VS Code
 .vscode/
 
-# Maven Wrapper (Keep these!)
+# Maven Wrapper 
 # Don't ignore:
 #!mvnw
 #!mvnw.cmd
