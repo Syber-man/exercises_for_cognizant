@@ -1,13 +1,35 @@
 # IntelliJ IDEA
 .idea/
 *.iml
+out/
 
 # Maven
 target/
 
-# Log files
+# Logs
 *.log
+
+# Spring Boot
+*.pid
+*.pid.lock
 
 # OS files
 .DS_Store
 Thumbs.db
+
+# Java
+*.class
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# Maven Wrapper (Keep these!)
+# Don't ignore:
+#!mvnw
+#!mvnw.cmd
+#!.mvn/
