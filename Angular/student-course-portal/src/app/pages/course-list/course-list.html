@@ -1,0 +1,79 @@
+<h2>Available Courses</h2>
+
+<input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Search course">
+
+<button (click)="onSearch()">
+    Search
+</button>
+
+<br><br>
+
+<p *ngIf="isLoading">
+    Loading courses...
+</p>
+
+<div *ngIf="!isLoading">
+
+    <div *ngIf="courses.length > 0; else noCourses">
+
+        <div *ngFor="let course of courses; let i = index; trackBy: trackByCourseId">
+
+    <div appHighlight [ngClass]="cardClasses">
+
+        <p>
+            {{ i + 1 }}.
+            <a [routerLink]="['/courses', course.id]">
+                {{ course.name }}
+            </a>
+        </p>
+
+        <p>
+            Credits: {{ course.credits | creditLabel }}
+        </p>
+
+        <span
+            [ngStyle]="{
+                'color': course.gradeStatus === 'passed'
+                    ? 'green'
+                    : course.gradeStatus === 'failed'
+                        ? 'red'
+                        : 'orange',
+                'font-weight': 'bold'
+            }">
+
+            {{ course.gradeStatus | titlecase }}
+
+        </span>
+
+        <br><br>
+
+        <button (click)="toggleDetails()">
+            {{ isExpanded ? 'Hide Details' : 'Show Details' }}
+        </button>
+
+        <div *ngIf="isExpanded">
+
+            <p><strong>Course ID:</strong> {{ course.id }}</p>
+
+            <p><strong>Status:</strong> {{ course.gradeStatus | titlecase }}</p>
+
+        </div>
+
+        <hr>
+
+    </div>
+
+</div>
+
+    </div>
+
+    <ng-template #noCourses>
+
+        <p>No courses available.</p>
+
+    </ng-template>
+
+</div>
